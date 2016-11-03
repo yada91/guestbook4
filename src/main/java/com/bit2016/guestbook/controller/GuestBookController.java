@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bit2016.guestbook.DAO.GuestBookDAO;
 import com.bit2016.guestbook.VO.GuestBook;
@@ -22,6 +21,8 @@ public class GuestBookController {
 	public String list(Model model) {
 		List<GuestBook> list = guestBookDAO.selectAll();
 		model.addAttribute("list", list);
+		model.addAttribute("br", "<br>");
+		model.addAttribute("nl", "\r\n");
 		return "/WEB-INF/views/list.jsp";
 	}
 

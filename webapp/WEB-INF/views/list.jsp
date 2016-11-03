@@ -7,6 +7,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>방명록</title>
+
+<link
+	href="${pageContext.request.contextPath }/assets/css/guestbook.css"
+	rel="stylesheet" type="text/css">
+</head>
 </head>
 <body>
 	<form action="${pageContext.request.contextPath }/add" method="post">
@@ -38,7 +43,7 @@
 					href="${pageContext.request.contextPath }/deleteform/${vo.id}">삭제</a></td>
 			</tr>
 			<tr>
-				<td colspan=4>${vo.content}</td>
+				<td colspan=4>${fn:replace(vo.content,nl, br)}</td>
 
 			</tr>
 		</table>
